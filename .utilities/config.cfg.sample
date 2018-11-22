@@ -1,0 +1,11 @@
+[db-schema1]
+user:XXXX
+password:XXXX
+host:XXXX
+database:XXXX
+
+[local]
+user:XXXX
+password:XXXX
+host:127.0.0.1
+database:XXXX

@@ -4,7 +4,7 @@ if (!defined('SESS_USER_VAR')){
     define('SESS_USER_VAR', 'user_model');
 }
 
-Class Base_Controller_Base {
+Class Base_Controller {
     
     protected $_msg;
     protected $_errmsg;

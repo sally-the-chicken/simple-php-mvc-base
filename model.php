@@ -1,6 +1,6 @@
 <?php
 
-abstract class Base_Model_Model {
+abstract class Base_Model {
 
     abstract protected function _insert();
     abstract protected function _update();

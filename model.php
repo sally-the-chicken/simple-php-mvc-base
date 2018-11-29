@@ -16,6 +16,20 @@ abstract class Base_Model
         return $this;
     }
 
+    public function __call($method, $arguments)
+    {
+        if (preg_match('/^get_by_(\w+)/', $method, $output_array) &&
+            count($output_array) > 0) {
+            $field_name = $output_array[1];
+            if (count($arguments) === 1) {
+                $argument = current($arguments);
+                return $this->_get_all(" `$field_name` = '$argument' ");
+            }
+            return $this->_get_all(" `$field_name` IN ('" . implode("','", $arguments) . "') ");
+        }
+        throw new Exception("Method $method is undefined.");
+    }
+
     public function __get($name)
     {
         $var = '_' . $name;
